@@ -36,24 +36,15 @@ function teacher_news_letter() {
     <div class="mc-content-wrap">
         <div id="body_wrapper">
         <div>
-<!--            <div class="title">
-                <p></p>
-            </div>-->
-            <div class="top-action">
-                <div class="pull-left">
-                    <h2 class="title">Newsletter</h2>
-                </div>
-                <div class="pull-right">
-                    <?php if ($_SESSION['teacher']): ?>
-                    <a href="<?php echo site_url()."/bds-newsletter-category/"; ?>" class="btn btn-bds-action"><i class="fa fa-plus-circle"></i>Add Category</a>
-                    <?php endif; ?>
-                </div>
+            <div class="page-title-wrap">
+                <h2 class="page-title pull-left" data-fontsize="21" data-lineheight="27">Newsletter</h2>
+                <?php if ($_SESSION['teacher']): ?>
+                    <a class="pull-right btn btn-mc" href="<?php echo site_url()."/bds-newsletter-category/"; ?>" class="btn btn-bds-action"><i class="fa fa-plus-circle"></i>Add Category</a>
+                <?php endif; ?>
                 <div class="clearfix"></div>
             </div>
             <div class="panel-group" id="accordion">
                 <?php
-               
-                
                 $count = 0;
                 foreach ($newsletter_category as $category) {
                     $count++;

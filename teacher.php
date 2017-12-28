@@ -18,7 +18,7 @@ function myplugin_scripts() {
     }
 add_action( 'wp_enqueue_scripts', 'myplugin_scripts' );
 
-wp_enqueue_style( 'style', plugin_dir_url( __FILE__ ) . 'css/style.css', array(), '1.1.7', 'all' );
+wp_enqueue_style( 'style', plugin_dir_url( __FILE__ ) . 'css/style.css', array(), '2.0.6', 'all' );
 wp_enqueue_style( 'font-awesome', plugin_dir_url( __FILE__ ) . 'css/font_awesome.css', array(), get_bloginfo('version'), 'all' );
 wp_enqueue_script( 'custom', plugin_dir_url( __FILE__ ) . 'js/custom.js', array( 'jquery' ), get_bloginfo('version'), false );
 wp_enqueue_style( 'sweetalert', plugin_dir_url( FILE ) . 'teacher/css/sweetalert.css', array(), get_bloginfo('version'), '' );

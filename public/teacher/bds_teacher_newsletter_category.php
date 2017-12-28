@@ -20,13 +20,18 @@ function bds_teacher_newsletter_category(){
 <div class="mc-content-wrap">
     <div class="h_wrapper">        
         <div class="bds-add-homework">
-            <div class="normal top-action">
+            <div class="page-title-wrap">
+                <h2 class="page-title" data-fontsize="21" data-lineheight="27">My Newsletter Categories</h2>
+                <!--<a class="pull-right btn btn-mc" href="<?= get_site_url() ?>/invite-parent"> <i class="fa fa-plus-circle"></i>&nbsp;New Student </a>-->
+                <!--<div class="clearfix"></div>-->
+            </div>
+<!--            <div class="normal top-action">
                 <div class="pull-left">
-                    <h2 class="title">My Newsletter Categories</h2>
+                    <h2 class="title"></h2>
                 </div>              
                 <div class="clearfix"></div>
-            </div>
-            <div class="form-wrap bg-white pd-20" style="position:relative;">
+            </div>-->
+            <div class="form-wrap bg-white-grey pd-20" style="position:relative;">
                 <div class="loader">
                     <div class="overlay"></div>
                     <div class="wrap">
@@ -53,7 +58,7 @@ function bds_teacher_newsletter_category(){
                             <div class="form-group">                      
                                 <p>
                                     <input type="hidden" value="<?php echo $_SESSION['teacher']; ?>" id="bds_teacher_id"/>
-                                    <button type="button" id="bds-add-news-cat-btn" name="submit">Submit</button>
+                                    <button class="btn btn-mc" type="button" id="bds-add-news-cat-btn" name="submit">Submit</button>
                                 </p>
                             </div>
                         </form>

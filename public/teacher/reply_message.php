@@ -92,9 +92,11 @@ function reply_message(){
 </div>
   <div class="mc-content-wrap">
       <div id="body_wrapper">
-		<div class="title">
-			<p>Reply <span><a href="<?php bloginfo('url')?>/inbox-message"><i class="fa fa-envelope"></i> Emails</a></span></p>
-		</div>
+                <div class="page-title-wrap">
+                    <h2 class="page-title pull-left" data-fontsize="21" data-lineheight="27">Reply</h2>
+                    <a class="pull-right btn btn-mc" href="<?php bloginfo('url')?>/inbox-message"><i class="fa fa-envelope"></i> Emails</a>
+                    <div class="clearfix"></div>
+                </div>
 		<div class="message">
 			<form id="form">
                                 <p>To:  <?= $to_name." (".$to_email." )"; ?></p>                                
@@ -120,7 +122,7 @@ function reply_message(){
                                 <input type="hidden" id="from_name" name="from_name" value="<?= $from_name; ?>">
                                 
                                 <div class="submit_email">
-					<button type="button" id="send_reply_messages"><i class="fa fa-envelope"></i> Send Email </button>
+                                    <button class="btn btn-mc" type="button" id="send_reply_messages"><i class="fa fa-envelope"></i> Send Email </button>
 				</div>
 			</form>
 		</div>

@@ -26,8 +26,9 @@ function read_message(){
 	
         <div class="mc-content-wrap">
             <div id="body_wrapper">
-                    <div class="title">
-                        <p style="padding-left:30px;"> Received Email <span><a style="color:#fff;" href="<?php echo site_url().'/reply-message/?msg_id='.$_GET['message']; ?>">Reply</a></span> </p>        
+                    <div class="page-title-wrap">
+                        <h2 class="page-title pull-left" data-fontsize="21" data-lineheight="27">Read Message</h2>
+                        <a class="pull-right btn btn-mc" href="<?php echo site_url().'/reply-message/?msg_id='.$_GET['message']; ?>">Reply</a>
                         <div class="clearfix"></div>
                     </div>
                     <div class="message_body">

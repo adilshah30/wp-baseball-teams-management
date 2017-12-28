@@ -52,10 +52,9 @@ function sent_message(){
         <div class="mc-content-wrap">
             <div id="body_wrapper" class="message_box">
             <form action="" method="post">
-
-                <div class="title" style="background:#879e73;">
+                <div class="page-title-wrap">
                     <div class="col-md-2 message-title">
-                        <p>Sent</p>
+                        <h2 class="page-title">Sent</h2>
                     </div>
                     <div class="col-md-5  message-pagingation-wrap">
                         <div class="messages-pagination">
@@ -76,11 +75,16 @@ function sent_message(){
                             ?>
                         </div>
                     </div>
+                    
                     <div class="col-md-5 message-action-btn">
-                        <p>  <span class="em_active"><a href="<?php bloginfo('url')?>/sent-message"><i class="fa fa-arrow-right"></i> Sent </a></span> <span><a href="<?php bloginfo('url')?>/inbox-message"><i class="fa fa-envelope"></i> Emails <b><?= $row->new_msg ?></b> </a></span> <span><a href="<?php bloginfo('url')?>/teacher-messages"><i class="fa fa-plus-circle"></i> New Email</a></span><input type="submit" class="btn-bds" name="delete_msg" value="Delete"></p>
+                        <a class="btn btn-mc" href="<?php bloginfo('url')?>/sent-message"><i class="fa fa-arrow-right" style="margin-right: 0px;"></i> Sent </a>
+                        <a class="btn btn-mc" href="<?php bloginfo('url')?>/inbox-message"><i class="fa fa-envelope" style="margin-right: 0px;"></i> Emails <b><?= $row->new_msg ?></b> </a>
+                        <a class="btn btn-mc" href="<?php bloginfo('url')?>/teacher-messages"><i class="fa fa-plus-circle" style="margin-right: 0px;"></i> New Email</a>
+                        <input class="btn btn-mc" type="submit" name="delete_msg" value="Delete">
                     </div>
                     <div class="clearfix"></div>
-                </div>
+                </div> 
+                
                 <div class="inbox_message">
                         <table>
                             <thead>

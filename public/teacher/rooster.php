@@ -15,8 +15,12 @@ function student_roster() {
         <div class="roster">
 
         <div class="roster_con">
-            <div class="title"> <p><b class="roster_title"></b><span> <a href="<?= get_site_url() ?>/invite-parent"> <i class="fa fa-plus-circle"></i>&nbsp;New Student </a> </span> <!--<span> <a href="javascript:void(0)"> <i class="fa fa-download"></i> Import Student </a> </span>--></p>
-            </div> 
+            <div class="page-title-wrap">
+                <h2 class="page-title pull-left" data-fontsize="21" data-lineheight="27">Roster</h2>
+                <a class="pull-right btn btn-mc" href="<?= get_site_url() ?>/invite-parent"> <i class="fa fa-plus-circle"></i>&nbsp;New Student </a>
+                <div class="clearfix"></div>
+            </div>
+             
             <div class="responsive-table">
                 
                 <table>
@@ -144,7 +148,7 @@ function student_roster() {
                         ?>
                         <br/>
                         <a href="<?php bloginfo('url') ?>/bds-add-report/?std_id=<?= $item->stu_id ?>&&edit_report=true" class="roster_rc">Edit</a><br/>
-                        <a href="<?php echo 'https://brookridgedayschool.com/wp-content/plugins/teacher/pdf/src/student_report_card.php?std_id='.$item->stu_id.'&&teacher_id='.$_SESSION['teacher'] ; ?>" class="roster_rc" target="_blank">View</a>
+                        <a href="<?php echo 'https://5de.147.myftpupload.com/wp-content/plugins/teacher/pdf/src/student_report_card.php?std_id='.$item->stu_id.'&&teacher_id='.$_SESSION['teacher'] ; ?>" class="roster_rc" target="_blank">View</a>
                     </td>
                     <td class="td_mng">
                     <li> <a href="<?php bloginfo('url') ?>/teacher-edit-roster/?update=<?= $item->stu_id ?>"><i class="fa fa-pencil"></i><span style="color:#000000"> Edit</span></a></li>
@@ -162,8 +166,11 @@ function student_roster() {
             
         </div>
         <!-- non roster -->
-        <div class="roster_con">
-            <div class="title"> <p class="no_roster_title"></p>
+        <div class="roster_con" style="margin-top:15px;">
+            <div class="page-title-wrap">
+                <h2 class="page-title pull-left" data-fontsize="21" data-lineheight="27">Non-Roster</h2>
+                <a class="pull-right btn btn-mc" href="<?= get_site_url() ?>/invite-parent"> <i class="fa fa-plus-circle"></i>&nbsp;New Student </a>
+                <div class="clearfix"></div>
             </div> 
             <div class="responsive-table">
                 <table>
@@ -203,7 +210,7 @@ function student_roster() {
                                     </div>
                                 <?php } ?>
                             </td>
-                            <td><span class="nameMember"><a href="<?php bloginfo('url') ?>/teacher-profile/"><?php echo ucfirst($value->full_name); ?></a></span></span>&nbsp;<p class="fa fa-check-square-o fa-lg"></p>
+                            <td><a href="<?php bloginfo('url') ?>/teacher-profile/"><span class="nameMember"><?php echo ucfirst($value->full_name); ?></span></a>&nbsp;<p class="fa fa-check-square-o fa-lg"></p>
                                 <?php
                                 if ($value->status == 0) {
                                     echo'<p class="p_approval"> Invitation Pending </p>';

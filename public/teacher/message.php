@@ -19,7 +19,7 @@ function teacher_message(){
 	if($_SERVER['HTTP_HOST']== 'localhost'){
 		$base = 'localhost/bds';
 	}else{
-		$base = 'http://brookridgedayschool.com';
+		$base = 'http://5de.147.myftpupload.com';
 	}
         $site_url = site_url();
 	wp_enqueue_script( 'text_editor', $site_url.'/wp-content/plugins/teacher/js/text_editor.js', array( 'jquery' ), get_bloginfo('version'), false );
@@ -43,9 +43,13 @@ function teacher_message(){
 </div>
   <div class="mc-content-wrap">
       <div id="body_wrapper">
-		<div class="title">
-			<p>Send Message <span><a href="<?php bloginfo('url')?>/inbox-message"><i class="fa fa-envelope"></i> Emails <b><?= $new_msg ?></b> </a></span></p>
-		</div>
+                <div class="page-title-wrap">
+                    <h2 class="page-title pull-left" data-fontsize="21" data-lineheight="27">Send New Message</h2>
+                    <a class="pull-right btn btn-mc" href="<?php bloginfo('url')?>/inbox-message"><i class="fa fa-envelope"></i> Emails <b><?= $new_msg ?></b> </a>
+                    
+                    <div class="clearfix"></div>
+                </div> 
+		
 		<div class="message">
 			<form id="form">
 				<p>Subject:  <small class="sub_err"></small></p>
@@ -103,7 +107,7 @@ function teacher_message(){
 				<input type="file" name="file" >
 				<br>
 				<div class="submit_email">
-					<button type="button" id="send_messages"><i class="fa fa-envelope"></i> Send Email </button>
+                                    <button class="btn btn-mc" type="button" id="send_messages"><i class="fa fa-envelope"></i> Send Email </button>
 				</div>
 				
 			</form>

@@ -46,22 +46,23 @@ function student_profile(){
     </div>  
 <div class="mc-content-wrap">
     <div class="h_wrapper">
-		<div class="title">
-			<p><?= ucwords( $student_info->full_name); ?>
-				<span>
-					<?php if(isset($_SESSION['parent']) === $student_id_gg): ?>
-                                    <?php
-                                        //echo "sss".$student_id_gg; 
-                                        echo "bbbb".$_SESSION['parent'];
-                                    ?>
-						<a href="<?php bloginfo('url')?>/update-roster/?update=<?= $student_info->id ?> ">Edit Profile</a>
-					<?php endif;
-					if(isset($_SESSION['teacher'])):?>
-						<a href="<?php bloginfo('url')?>/teacher-edit-roster/?update=<?= $student_info->id ?> ">Edit Profile</a>
-					<?php endif; ?>
-				</span>
-			</p>
-		</div>
+        <div class="page-title-wrap">
+                <h2 class="page-title pull-left" data-fontsize="21" data-lineheight="27"><?= ucwords( $student_info->full_name); ?></h2>
+                <?php if(isset($_SESSION['parent']) === $student_id_gg): ?>
+                <?php
+                    //echo "sss".$student_id_gg; 
+                    //echo "".$_SESSION['parent'];
+                ?>
+                    <a class="pull-right btn btn-mc" href="<?php bloginfo('url')?>/update-roster/?update=<?= $student_info->id ?> ">Edit Profile</a>
+                <?php endif;
+                if(isset($_SESSION['teacher'])):?>
+                    <a class="pull-right btn btn-mc" href="<?php bloginfo('url')?>/teacher-edit-roster/?update=<?= $student_info->id ?> ">Edit Profile</a>
+                <?php endif; ?>
+                <div class="clearfix"></div>
+        </div> 
+		
+					
+				
 	    <div class="stu_pro_body">
 	    	<div class="stu_info">
 	    		<table>
@@ -141,29 +142,24 @@ function student_profile(){
 	    		<?php } ?>
 	    	</div>
 	    </div>
+        <div class="clearfix"></div>
 		<div class="family">
-			<div class="title add_family_title" style="clear: both">
-				<p>Family Members 
-                                        <?php if(isset($_SESSION['parent'])=== $student_id_gg){
-                                        ?>
-                                        <span>
-                                                <a href="<?php echo bloginfo('url').'/add-family/';?>" ><i class="fa fa-plus-circle"></i> Add Family</a>
-                                        </span> 
-                                    <?php
-
-                                    }elseif(isset($_SESSION['teacher'])){
-                                        ?>
-
-                                        <span>
-                                                <a href="<?php echo bloginfo('url').'/add-family/?member='.$student_info->parent_id.''; ?>" ><i class="fa fa-plus-circle"></i> Add Family</a>
-                                        </span> 
-
-                                    <?php
-                                        } 
-                                        ?>
-                                        
-                                </p>
-			</div>
+                    <div class="page-title-wrap">
+                        <h2 class="page-title pull-left" data-fontsize="21" data-lineheight="27">Family Members</h2>
+                        <?php 
+                        if(isset($_SESSION['parent'])=== $student_id_gg){
+                        ?>               
+                           <a class="pull-right btn btn-mc" href="<?php echo bloginfo('url').'/add-family/';?>" ><i class="fa fa-plus-circle"></i> Add Family</a>                                        
+                        <?php
+                        }elseif(isset($_SESSION['teacher'])){
+                        ?>
+                            <a class="pull-right btn btn-mc" href="<?php echo bloginfo('url').'/add-family/?member='.$student_info->parent_id.''; ?>" ><i class="fa fa-plus-circle"></i> Add Family</a>
+                        <?php
+                        } 
+                        ?>
+                        <div class="clearfix"></div>
+                    </div> 
+			
 <!--			<div class="fam_wrap">-->
 				<?php
 				global $wpdb;
@@ -179,28 +175,27 @@ function student_profile(){
 					?>
 			<div class="stu_pro_body">
 					<div class="fam_<?= $value->id ?>">
-					<div class="title">
-						<p> <?= ucfirst( $value->relation ); ?>
-                                                    
-                                                    <?php if(isset($_SESSION['parent'])=== $student_id_gg){ ?>
-                                                        <span onclick="delete_family_member('<?= $value->id ?>')"><i class="fa fa-trash-o"></i> Delete</span><span>
-                                                        <a href="<?= bloginfo('url') ?>/edit-parent-profile/?member=<?= str_replace( "=","", base64_encode( $value->id ) ) ?>">
-                                                            <i class="fa fa-pencil"></i> Edit </a>
-                                                        </span>
-                                                    <?php 
-                                                    
-                                                    }elseif(isset($_SESSION['teacher'])){
-                                                        ?>
-                                                        <span onclick="delete_family_member('<?= $value->id ?>')"><i class="fa fa-trash-o"></i> Delete</span><span>
-                                                            <a href="<?= bloginfo('url') ?>/edit-parent-profile/?member=<?= str_replace( "=","", base64_encode( $value->id ) ) ?>">
-                                                                <i class="fa fa-pencil"></i> Edit
-                                                            </a>
-                                                        </span>
-                                                    <?php 
-                                                            } ?>
-                                                
-                                                </p>
-					</div>
+                                        <div class="page-title-wrap">
+                                            <h2 class="page-title pull-left" data-fontsize="21" data-lineheight="27"><?= ucfirst( $value->relation ); ?></h2>
+                                            
+                                            <?php if(isset($_SESSION['parent'])=== $student_id_gg){ ?>
+                                                <button class="pull-right btn btn-mc" onclick="delete_family_member('<?= $value->id ?>')"><i class="fa fa-trash-o"></i> Delete</button>
+                                                <a class="pull-right btn btn-mc" href="<?= bloginfo('url') ?>/edit-parent-profile/?member=<?= str_replace( "=","", base64_encode( $value->id ) ) ?>">
+                                                    <i class="fa fa-pencil"></i> Edit 
+                                                </a>       
+                                            <?php        
+                                             }elseif(isset($_SESSION['teacher'])){
+                                            ?>
+                                                <button class="pull-right btn btn-mc" onclick="delete_family_member('<?= $value->id ?>')"><i class="fa fa-trash-o"></i> Delete</button>        
+                                                <a class="pull-right btn btn-mc" href="<?= bloginfo('url') ?>/edit-parent-profile/?member=<?= str_replace( "=","", base64_encode( $value->id ) ) ?>">
+                                                    <i class="fa fa-pencil"></i> Edit
+                                                </a>        
+                                            <?php 
+                                             }
+                                            ?>
+                                            <div class="clearfix"></div>
+                                        </div>     
+					
 					<div class="family_info">
 						<table>
 							<tr>
